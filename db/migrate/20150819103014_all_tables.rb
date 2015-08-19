@@ -6,7 +6,7 @@ class AllTables < ActiveRecord::Migration
       t.text :description
       t.string :website_url
       t.string :signup_url
-      t.strng :example_url
+      t.string :example_url
       t.string :screenshot
       t.boolean :approval
       t.integer :user_id
