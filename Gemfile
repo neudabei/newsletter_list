@@ -6,6 +6,7 @@ gem 'pg'
 gem 'bcrypt'
 gem 'fabrication'
 gem 'faker'
+gem 'bootstrap_form'
 
 gem 'rails', '4.2.1'
 gem 'sass-rails', '~> 5.0'
@@ -23,6 +24,7 @@ group :development, :test do
   gem 'spring'
   gem 'pry'
   gem 'rspec-rails', '2.99'
+  gem 'shoulda-matchers'
   gem 'capybara'
   gem 'launchy'
 end
