@@ -47,3 +47,6 @@ dh_newsletter.categories << co_category
 hb_newsletter.categories << ec_category
 
 rge_newsletter.categories << em_category
+
+# add the skim
+# add ben evans

@@ -1,0 +1,7 @@
+= bootstrap_form_for @newsletter do |f|
+  = f.text_field :name
+  = f.text_field :description
+  = f.text_field :website_url
+  = f.collection_check_boxes :category_ids, Category.all, :id, :name, inline: true
+  = f.submit "Submit"
+
