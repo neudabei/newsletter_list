@@ -17,4 +17,9 @@ describe Category do
     expect(vc_category.newsletters).to include(avc, md)
   end
 
+  it { should validate_presence_of (:name) }
+  it { should validate_uniqueness_of (:name) }
+  it { should have_many (:nl_categories) }
+  it { should have_many (:newsletters) }
+
 end
