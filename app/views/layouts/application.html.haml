@@ -1,0 +1,10 @@
+!!! 5
+%html(lang="en-US")
+  %head
+    %title Newsletters List
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tag
+    %body
+      .container
+        = yield

@@ -5,7 +5,7 @@ class NewslettersController < ApplicationController
   end
 
   def show
-    
+    @newsletter = Newsletter.find_by(id: (params[:id]))
   end
 
   def new
