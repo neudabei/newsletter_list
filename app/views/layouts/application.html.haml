@@ -5,6 +5,8 @@
     = stylesheet_link_tag "application"
     = javascript_include_tag "application"
     = csrf_meta_tag
-    %body
-      .container
-        = yield
+  %body
+    %header
+      = render 'layouts/navigation'
+    .container
+      = yield

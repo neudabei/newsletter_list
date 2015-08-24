@@ -1,6 +1,7 @@
 %section.container
 - @newsletters.each do |newsletter|
-  %h1= newsletter.name
-  %h2= newsletter.signup_url
-  .content
-    = newsletter.description
+  .well
+    %h1= newsletter.name
+    %h2= newsletter.website_url
+    .content
+      = newsletter.description

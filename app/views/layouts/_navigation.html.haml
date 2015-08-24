@@ -1,0 +1,18 @@
+%nav.navbar.navbar-default{:role => "navigation"}
+  .navbar-header
+    %button{:type => "button", :class => "navbar-toggle", "data-toggle" => "collapse", "data-target" => "#navbar-collapse-01"}
+      %span.sr-only Toggle Navigation
+    %a.navbar-brand(href="#") Flat UI
+  .collapse.navbar-collapse#navbar-collapse
+    %ul.nav.navbar-nav
+      %li.active
+        %a(href="#fakelink") Products
+      %li
+        %a(href="#fakelink") Features
+    %form.navbar-form.navbar-right{:action => "#", :role => "search"}
+      .form-group
+        .input-group
+          %input.form-control{:id => "navbarInput-01", :type => "search", :placeholder => "Search"}
+          %span.input-group-btn
+            %button.btn{:type => "submit"}
+              %span.fui-search

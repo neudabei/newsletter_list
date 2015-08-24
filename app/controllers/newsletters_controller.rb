@@ -17,6 +17,8 @@ class NewslettersController < ApplicationController
 
     if @newsletter.save
       flash[:notice] = "The newsletter #{@newsletter.name} has been added."
+      binding.pry
+
       redirect_to newsletters_path
     else
       flash[:error] = "There was an error. The newsletter was not added."
