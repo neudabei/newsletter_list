@@ -1,7 +1,14 @@
 %section.container
-- @newsletters.each do |newsletter|
-  .well
-    %h1= newsletter.name
-    %h2= newsletter.website_url
-    .content
-      = newsletter.description
+  - @newsletters.each do |newsletter|
+    .list-group
+      .row
+        .col-md-1{:class => "text-center"}
+          %br
+          %a
+            %span{:class => "glyphicon glyphicon-triangle-top text-center"}
+            %p 50 votes
+        .col-md-10
+          %h4= newsletter.name
+          %h6= newsletter.website_url
+          .content
+            = newsletter.description

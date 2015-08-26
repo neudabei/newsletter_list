@@ -2,13 +2,13 @@
   .navbar-header
     %button{:type => "button", :class => "navbar-toggle", "data-toggle" => "collapse", "data-target" => "#navbar-collapse-01"}
       %span.sr-only Toggle Navigation
-    %a.navbar-brand(href="#") Flat UI
+    %a.navbar-brand(href="#") Newsletter list
   .collapse.navbar-collapse#navbar-collapse
     %ul.nav.navbar-nav
       %li.active
-        %a(href="#fakelink") Products
+        = link_to "Add newsletter", new_newsletter_path
       %li
-        %a(href="#fakelink") Features
+        = link_to "View newsletters", newsletters_path
     %form.navbar-form.navbar-right{:action => "#", :role => "search"}
       .form-group
         .input-group

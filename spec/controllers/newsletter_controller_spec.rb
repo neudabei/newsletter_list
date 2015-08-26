@@ -12,6 +12,9 @@ describe NewslettersController do
     end
 
     it "renders the index template" do
+      newsletter1 = Fabricate(:newsletter)
+      newsletter2 = Fabricate(:newsletter)
+      newsletter3 = Fabricate(:newsletter)
       get :index
       expect(response).to render_template("index")
     end
@@ -19,10 +22,8 @@ describe NewslettersController do
 
 
   describe "POST create" do
-
+    let(:newsletter){ Fabricate(:newsletter) }
     context "with valid input" do
-      newsletter1 = Fabricate(:newsletter)
-
       it "creates the newsletter post" do
         expect(Newsletter.count).to eq(1)
       end
@@ -34,13 +35,14 @@ describe NewslettersController do
     end
 
     context "with invalid input" do
-      newsletter1 = Newsletter.create(name: "AVC", description: "A newsletter about VC.")
 
       it "doesn't create the newsletter post" do
+        newsletter1 = Newsletter.create(name: "AVC", description: "A newsletter about VC.")
         expect(Newsletter.count).to eq(0)
       end
 
       it "renders the :new template" do
+        newsletter1 = Newsletter.create(name: "AVC", description: "A newsletter about VC.")
         expect(response).to render_template :new
       end
 
