@@ -17,7 +17,6 @@ class NewslettersController < ApplicationController
 
     if @newsletter.save
       flash[:notice] = "The newsletter #{@newsletter.name} has been added."
-      binding.pry
 
       redirect_to newsletters_path
     else
