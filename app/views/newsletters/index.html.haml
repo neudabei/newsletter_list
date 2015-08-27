@@ -4,7 +4,7 @@
       .row
         .col-md-1{:class => "text-center"}
           %br
-          %a(href=newsletters_path)
+          %a= "link_to vote_newsletter_path(newsletter, vote: true), method: 'post'"
             %span{:class => "glyphicon glyphicon-triangle-top text-center"}
             %p 50 votes
         .col-md-10

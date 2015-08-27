@@ -26,6 +26,16 @@ class NewslettersController < ApplicationController
     end
   end
 
+  def vote
+    @vote = Vote.create(vote: params[:vote], user: current_user)
+
+    if @vote.valid
+      flash[:notice] = "Your vote was counted."
+    else
+      flash[:error] = "Your vote couldn't be counted."
+    end
+  end
+
   private
 
   def newsletter_params
