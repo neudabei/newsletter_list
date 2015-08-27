@@ -1,0 +1,7 @@
+%h2 Register as a new user
+
+= bootstrap_form_for @user do |f|
+  = f.text_field :name, placeholder: "Your Name"
+  = f.text_field :email, placeholder: "youremail@domain.com"
+  = f.text_field :password, placeholder: "Your Password"
+  = f.submit "Register"

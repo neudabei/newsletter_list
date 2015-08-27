@@ -6,4 +6,8 @@ Rails.application.routes.draw do
     #   post 'vote'
     # end
   end
+
+  get '/register', to: 'users#new'
+
+  resources :users, only: [:show ,:create]
 end
