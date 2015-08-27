@@ -1,4 +1,5 @@
 class NewslettersController < ApplicationController
+  before_action :require_user, except: [:show, :index]
 
   def index
     @newsletters = Newsletter.all   
