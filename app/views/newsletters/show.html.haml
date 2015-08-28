@@ -1,5 +1,17 @@
 %section.container
-  %h1= @newsletter.name
-  %h2= @newsletter.signup_url
-  .content
-    = @newsletter.description
+  .list-group
+    .row
+      .col-md-1.text-center
+        %br
+        = link_to vote_newsletter_path(@newsletter), method: "post" do
+          %span.glyphicon.glyphicon-triangle-top.text-center
+          %p= @newsletter.votes.count
+      .col-md-10
+        %h3= @newsletter.name
+        %h5= fix_url(@newsletter.website_url)
+        .content
+          = @newsletter.description
+          .row
+          - @newsletter.categories.each do |category|
+            %button.btn.btn-default.btn-xs{:type => "button"}
+              = category.name
