@@ -22,8 +22,12 @@ describe NewslettersController do
 
 
   describe "POST create" do
-    let(:newsletter){ Fabricate(:newsletter) }
+    before do
+      post :create, newsletter: Fabricate.attributes_for(:newsletter)
+    end
+
     context "with valid input" do
+
       it "creates the newsletter post" do
         expect(Newsletter.count).to eq(1)
       end
@@ -37,12 +41,10 @@ describe NewslettersController do
     context "with invalid input" do
 
       it "doesn't create the newsletter post" do
-        newsletter1 = Newsletter.create(name: "AVC", description: "A newsletter about VC.")
         expect(Newsletter.count).to eq(0)
       end
 
       it "renders the :new template" do
-        newsletter1 = Newsletter.create(name: "AVC", description: "A newsletter about VC.")
         expect(response).to render_template :new
       end
 
