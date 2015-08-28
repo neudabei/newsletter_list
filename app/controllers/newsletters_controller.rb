@@ -27,13 +27,16 @@ class NewslettersController < ApplicationController
   end
 
   def vote
-    @vote = Vote.create(vote: params[:vote], user: current_user)
-
-    if @vote.valid
+    @vote = Vote.create(vote: true, user: current_user, newsletter_id: params[:id])
+    #binding.pry
+    if @vote.valid?
       flash[:notice] = "Your vote was counted."
     else
-      flash[:error] = "Your vote couldn't be counted."
+      flash[:error] = "Your vote couldn't be counted. You can only vote once on each newsletter."
     end
+
+    redirect_to :back 
+
   end
 
   private
