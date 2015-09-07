@@ -11,7 +11,10 @@
         = link_to "View newsletters", newsletters_path
       %li.dropdown
         %a{:class =>"dropdown-toggle", "data-toggle" =>"dropdown"}(href="#")
-          Sign in / up
+          - if logged_in?
+            Logout
+          - else
+            Sign in / up
           %b.caret
         %span.dropdown-arrow
         %ul.dropdown-menu

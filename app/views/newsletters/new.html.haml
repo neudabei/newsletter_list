@@ -3,7 +3,8 @@
 = bootstrap_form_for @newsletter do |f|
   = f.text_field :name, hide_label: true, placeholder: "Enter the title of the newsletter.", label_class: "form-control input-lg"
   = f.text_area :description, hide_label: true, placeholder: "Add some information about the newsletter."
-  = f.text_field :website_url, hide_label: true, placeholder: "www.domain.com of the newsletter?"
+  = f.text_field :website_url, hide_label: true, placeholder: "Website of the newsletter?"
+  = f.text_field :signup_url, hide_label: true, placeholder: "Where can people sign up for the newsletter?"
   = f.collection_check_boxes :category_ids, Category.all, :id, :name, inline: true, label: "Category", label_class: "custom-checkbox"
   = f.submit "Submit"
 
