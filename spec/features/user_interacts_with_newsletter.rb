@@ -28,12 +28,4 @@ feature "User interacts with newsletter" do
 
   end
 
-  scenario "user votes on newsletter" do
-
-    # login
-    # puts page.body
-    # click_link "vote_1"
-
-  end
-
 end

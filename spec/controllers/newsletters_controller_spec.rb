@@ -23,7 +23,7 @@ describe NewslettersController do
 
   describe "POST create" do
     before do
-      post :create, newsletter: Fabricate.attributes_for(:newsletter)
+      newsletter = Fabricate(:newsletter)
     end
 
     context "with valid input" do
