@@ -10,7 +10,7 @@ feature "User signs in" do
     fill_in "email", with: "email@domain.com"
     fill_in "password", with: "password"
     click_button "Login"
-    page.should have_content "Welcome, you've logged in."
+    page.should have_content "Welcome Bob, you've logged in."
   end
 
 end

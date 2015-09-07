@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     user = User.where(email: params[:email]).first
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      flash[:notice] = "Welcome, you've logged in."
+      flash[:notice] = "Welcome #{user.name}, you've logged in."
       redirect_to root_path
     else
       flash[:error] = "There is something wrong with your username or password."
