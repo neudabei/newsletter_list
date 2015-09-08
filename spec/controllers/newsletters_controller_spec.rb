@@ -24,7 +24,7 @@ describe NewslettersController do
   describe "POST create" do
 
     before do
-      login
+      set_current_user
     end
 
     context "with valid input" do
