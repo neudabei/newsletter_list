@@ -22,17 +22,22 @@ describe NewslettersController do
 
 
   describe "POST create" do
+
     before do
-      newsletter = Fabricate(:newsletter)
+      login
     end
 
     context "with valid input" do
 
       it "creates the newsletter post" do
+        
+        post :create, newsletter: {name: "Newsletter name", description: "newsletter description", website_url: "www.domain.com", signup_url: "www.domain.com/signup"}
         expect(Newsletter.count).to eq(1)
       end
 
       it "redirects to the index page" do
+        
+        post :create, newsletter: {name: "Newsletter name", description: "newsletter description", website_url: "www.domain.com", signup_url: "www.domain.com/signup"}
         expect(response).to redirect_to newsletters_path
       end
 
@@ -41,10 +46,12 @@ describe NewslettersController do
     context "with invalid input" do
 
       it "doesn't create the newsletter post" do
+        post :create, newsletter: {name: "Newsletter name", description: "newsletter description", website_url: nil, signup_url: "www.domain.com/signup"}
         expect(Newsletter.count).to eq(0)
       end
 
       it "renders the :new template" do
+        post :create, newsletter: {name: "Newsletter name", description: "newsletter description", website_url: nil, signup_url: "www.domain.com/signup"}
         expect(response).to render_template :new
       end
 
