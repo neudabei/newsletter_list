@@ -11,6 +11,7 @@ feature "User interacts with newsletter" do
     # sign in
     login
     add_newsletter
+    verify_newsletter_was_added
     vote_on_newsletter
   end
 
@@ -21,9 +22,10 @@ feature "User interacts with newsletter" do
     fill_in "newsletter[website_url]", with: "#{newsletter.website_url}"
     fill_in "newsletter[signup_url]", with: "#{newsletter.signup_url}"
     check("Bitcoin")
-    click_button "Submit"
+    click_button "Submit"    
+  end
 
-    # see newsletter is in index queue
+  def verify_newsletter_was_added
     click_link "View newsletters"
     expect(page).to have_content("#{newsletter.name}")
   end
