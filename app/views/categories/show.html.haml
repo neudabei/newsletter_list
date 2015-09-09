@@ -14,8 +14,5 @@
             = newsletter.description
             .row
             - newsletter.categories.each do |category|
-              %button.btn.btn-default.btn-xs{:type => "button"}
-                = link_to "#{category.name}", category_path(category)
-
-
-
+              .span.btn.btn-default.btn-xs{:type => "button"}
+                = link_to "#{category.name}", category_path(category), {:class =>"white_font"}
