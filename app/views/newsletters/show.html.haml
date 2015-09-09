@@ -7,11 +7,11 @@
           %span.glyphicon.glyphicon-triangle-top.text-center
           %p= @newsletter.votes.count
       .col-md-10
-        %h3= @newsletter.name
-        %h5= fix_url(@newsletter.website_url)
+        %h4= link_to "#{@newsletter.name}", newsletter_path(@newsletter)
+        %h6= fix_url(@newsletter.website_url)
         .content
           = @newsletter.description
           .row
           - @newsletter.categories.each do |category|
-            %button.btn.btn-default.btn-xs{:type => "button"}
-              = category.name
+            %span.btn.btn-default.btn-xs{:type => "button"}
+              = link_to "#{category.name}", category_path(category), {:class => "white_font"}

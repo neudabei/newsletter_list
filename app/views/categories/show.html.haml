@@ -8,8 +8,8 @@
             %span.glyphicon.glyphicon-triangle-top.text-center
             %p= newsletter.votes.count
         .col-md-10
-          %h3= newsletter.name
-          %h5= fix_url(newsletter.website_url)
+          %h4= link_to "#{newsletter.name}", newsletter_path(newsletter)
+          %h6= fix_url(newsletter.website_url)
           .content
             = newsletter.description
             .row
