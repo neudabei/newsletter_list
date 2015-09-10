@@ -2,7 +2,7 @@
   .navbar-header
     %button{:type => "button", :class => "navbar-toggle", "data-toggle" => "collapse", "data-target" => "#navbar-collapse-01"}
       %span.sr-only Toggle Navigation
-    %a.navbar-brand(href="#") Newsletter list
+    = link_to "Newsletter list", root_path, class: "navbar-brand"
   .collapse.navbar-collapse#navbar-collapse
     %ul.nav.navbar-nav
       %li.active
