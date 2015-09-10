@@ -6,4 +6,6 @@ class Newsletter < ActiveRecord::Base
 
   validates_presence_of :name, :website_url
   validates_uniqueness_of :website_url
+
+  default_scope { order('votes_count DESC') }
 end
